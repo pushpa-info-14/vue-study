@@ -1,22 +1,28 @@
-<template>
-  <div class="container">
-    <div>
-      <label for="input">Text Input</label>
-      <!-- <input type="text" v-model="textInputValue" /> -->
-      <input
-        type="text"
-        :value="textInputValue"
-        @input="textInputValue = ($event.target as HTMLInputElement).value"
-      />
-      <p>
-        Text Input Output: <span>{{ textInputValue }}</span>
-      </p>
-    </div>
-  </div>
-</template>
+<script lang="ts">
+import BasicModelBinding from '@/components/v-model/BasicModelBinding.vue'
+import InputComponent from '@/components/v-model/InputComponent.vue'
+import InputComponentComputed from '@/components/v-model/InputComponentComputed.vue'
 
-<script setup lang="ts">
-import { ref } from 'vue'
-
-const textInputValue = ref('')
+export default {
+  components: {
+    BasicModelBinding,
+    InputComponent,
+    InputComponentComputed,
+  },
+  data() {
+    return {
+      inputValue1: '',
+      inputValue2: '',
+    }
+  },
+}
 </script>
+
+<template>
+  <BasicModelBinding />
+  <br />
+  <InputComponent v-model="inputValue1" />
+  <p>Input Component1 Output: {{ inputValue1 }}</p>
+  <InputComponentComputed v-model="inputValue2" />
+  <p>Input Component2 Output: {{ inputValue2 }}</p>
+</template>

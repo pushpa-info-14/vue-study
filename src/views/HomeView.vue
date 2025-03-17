@@ -1,12 +1,10 @@
 <script lang="ts">
 import GenericDropdown from '@/components/generic-dropdown/GenericDropdown.vue'
-import BasicModelBinding from '@/components/v-model/BasicModelBinding.vue'
 import InputComponent from '@/components/v-model/InputComponent.vue'
 import InputComponentComputed from '@/components/v-model/InputComponentComputed.vue'
 
 export default {
   components: {
-    BasicModelBinding,
     InputComponent,
     InputComponentComputed,
     GenericDropdown,
@@ -35,8 +33,6 @@ export default {
 </script>
 
 <template>
-  <BasicModelBinding />
-  <br />
   <InputComponent v-model="inputValue1" />
   <p>Input Component1 Output: {{ inputValue1 }}</p>
   <InputComponentComputed v-model="inputValue2" />
@@ -47,4 +43,5 @@ export default {
 
   <GenericDropdown :items="dropdownItems2" v-model="selectedItem2" place-holder="Select a User" />
   <p>Dropdown Output: {{ selectedItem2 }}</p>
+  <p>Teeeee</p>
 </template>
